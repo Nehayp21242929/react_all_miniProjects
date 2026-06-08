@@ -3,11 +3,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import PropTypes from 'prop-types'
-
+import Form from 'react-bootstrap/Form';
 
 const Navbar1 = (props) => {
+
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className={`navbar-${props.mode} bg-${props.mode}`}>
       <Container>
         <Navbar.Brand href="#home">{props.title}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -27,6 +28,13 @@ const Navbar1 = (props) => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <Form.Check 
+              style={{color: 'gray'}}
+              type="switch"
+              id="custom-switch"
+              label={props.mode=='light' ? "Enable Dark Mode":"Enable Light Mode"}
+              onClick={props.toggleMode}
+          />
         </Navbar.Collapse>
       </Container>
     </Navbar>
