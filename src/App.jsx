@@ -46,8 +46,6 @@ function App() {
        <Routes>
          <Route path="/" element={ <TextForm heading='Enter the text to analyse below:' mode={mode}/>} />
          <Route path="/about" element={<About mode={mode}/>} />
-         {/* Catch-all for undefined routes
-         <Route path="*" element={<NotFound />} /> */}
        </Routes>
     </div>
     
