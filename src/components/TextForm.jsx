@@ -42,21 +42,21 @@ export default function TextForm(props) {
     <Form >
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>{props.heading}</Form.Label>
-        <Form.Control value={text} onChange={handleOnChange} as="textarea" rows={8} style={{backgroundColor: props.mode==='light'? 'white':'gray' , color: props.mode==='light'? 'black':'white'}}/>
+        <Form.Control value={text} onChange={handleOnChange} as="textarea" rows={8} style={{backgroundColor: props.mode==='light'? 'white':'#064273' , color: props.mode==='light'? 'black':'white'}}/>
       </Form.Group>
     </Form>
-    <button className="btn btn-primary mx-2"  onClick={handleUpClick}>Click to Uppercase</button>
-    <button className="btn btn-primary mx-2" onClick={handleLowClick}>Click to Lowercase</button>
-    <button className="btn btn-primary mx-2" onClick={handleClearTextClick}>Clear Text</button>
-    <button className="btn btn-primary mx-2" onClick={handleCopyClick}>{copied? "Copied ✓" : "Copy to Clipboard"}</button>
-    <><button className="btn btn-primary mx-2" onClick={handleSearchWordClick}>Search a word</button><input value={searchWord} onChange={(e) => setSearchWord(e.target.value)}/></>
+    <button className="btn btn-primary mx-2 mb-1"  onClick={handleUpClick}>Click to Uppercase</button>
+    <button className="btn btn-primary mx-2 mb-1" onClick={handleLowClick}>Click to Lowercase</button>
+    <button className="btn btn-primary mx-2 mb-1" onClick={handleClearTextClick}>Clear Text</button>
+    <button className="btn btn-primary mx-2 mb-1" onClick={handleCopyClick}>{copied? "Copied ✓" : "Copy to Clipboard"}</button>
+    <><button className="btn btn-primary mx-2 mb-1" onClick={handleSearchWordClick}>Search a word</button><input value={searchWord} style={{backgroundColor: props.mode==='light'? 'white':'#074679' , color: props.mode==='light'? 'black':'white', borderRadius: '5px', height:'35px',borderColor:'gray'}} onChange={(e) => setSearchWord(e.target.value)}/></>
     </div>
     <div className='container my-3' style={{color: props.mode==='light'? 'black':'white'}}>
       <h5>Your text summary</h5>
       <p>{text.trim().split(" ").filter(value => value!="").length} words and {text.length} characters</p>
       <p>Search Word Result : {searchResult}</p>
       <h5 className='mt-2'>Preview</h5>
-      <p>{text.trim().length>0 ? text : "Enter Your Text to Preview it here"}</p>
+      <p>{text.trim().length>0 ? text : "Nothing to preview!"}</p>
     </div>
     </>
   )
