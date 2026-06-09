@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar1 from './components/Navbar.jsx';
 import TextForm from './components/TextForm.jsx';
 import About from './components/About.jsx';
@@ -39,8 +40,13 @@ function App() {
     <Navbar1 title="TextUtils" mode={mode} toggleMode={toggleMode}/>
     <AlertMsg alert={alert} showAlertOnModeChange={showAlertOnModeChange} setShowAlertOnModeChange={setShowAlertOnModeChange}/>
     <div className="container">
-      <TextForm heading='Enter the text to analyse below:' mode={mode}/>
-      {/* <About/> */}
+      {/* Routes */}
+       <Routes>
+         <Route exact path="/" element={ <TextForm heading='Enter the text to analyse below:' mode={mode}/>} />
+         <Route exact path="/about" element={<About />} />
+         {/* Catch-all for undefined routes
+         <Route path="*" element={<NotFound />} /> */}
+       </Routes>
     </div>
     
     </>
