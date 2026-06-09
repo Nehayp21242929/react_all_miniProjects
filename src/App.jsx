@@ -42,8 +42,8 @@ function App() {
     <div className="container">
       {/* Routes */}
        <Routes>
-         <Route exact path="/" element={ <TextForm heading='Enter the text to analyse below:' mode={mode}/>} />
-         <Route exact path="/about" element={<About />} />
+         <Route path="/" element={ <TextForm heading='Enter the text to analyse below:' mode={mode}/>} />
+         <Route path="/about" element={<About />} />
          {/* Catch-all for undefined routes
          <Route path="*" element={<NotFound />} /> */}
        </Routes>
